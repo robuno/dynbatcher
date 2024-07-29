@@ -12,7 +12,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'dbs-main=dbs_training.main:main'
+            'dbs-training-main=dbs_training.main:main'
         ]
     },
 )
