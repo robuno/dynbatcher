@@ -1,18 +1,23 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='dbs-training',
-    version='0.1',
+    name='dbstraining',
+    version='0.1.0',
     packages=find_packages(),
     install_requires=[
-        'torch>=1.0.0',
-        'torchvision>=0.3.0',
-        'matplotlib>=3.0.0',
-        'tqdm>=4.0.0'
+        'torch',
+        'matplotlib'
     ],
-    entry_points={
-        'console_scripts': [
-            'dbs-training-main=dbs_training.main:main'
-        ]
-    },
+    author='Unat Teksen',
+    description='A package for dynamic batch size training in PyTorch',
+    long_description=open('README.md').read(),
+    long_description_content_type='text/markdown',
+    url='https://github.com/robuno/dbs-training',
+    classifiers=[
+        'Programming Language :: Python :: 3',
+        'License :: OSI Approved :: MIT License',
+        'Operating System :: OS Independent',
+    ],
+    python_requires='>=3.6',
+    license='MIT',  # Add this line to specify the license
 )
