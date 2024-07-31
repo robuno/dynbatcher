@@ -45,11 +45,11 @@ dbstraining.print_batch_info(trainloader, index=127, display_samples=True)
 
 ### Investigating Batch Samples
 
-<p align="center">
-    <img src="https://raw.githubusercontent.com/starkslab/starkslab.github.io/main/dbstraining/static/images/batch32.png" width="200" alt="Batch Size 32 Samples" />
-    <img src="https://raw.githubusercontent.com/starkslab/starkslab.github.io/main/dbstraining/static/images/batch64.png" width="200" alt="Batch Size 64 Samples" />
-    <img src="https://raw.githubusercontent.com/starkslab/starkslab.github.io/main/dbstraining/static/images/batch128.png" width="200" alt="Batch Size 128 Samples" />
-</p>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/starkslab/starkslab.github.io/main/dbstraining/static/images/batch32.png" width="250" style="vertical-align: top;" alt="Batch Size 32 Samples" />
+    <img src="https://raw.githubusercontent.com/starkslab/starkslab.github.io/main/dbstraining/static/images/batch64.png" width="250" style="vertical-align: top;" alt="Batch Size 64 Samples" />
+    <img src="https://raw.githubusercontent.com/starkslab/starkslab.github.io/main/dbstraining/static/images/batch128.png" width="250" style="vertical-align: top;" alt="Batch Size 128 Samples" />
+</div>
 
 ## Contributing
 Contributions are welcome! Please open an issue or submit a pull request on GitHub.
