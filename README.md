@@ -2,7 +2,7 @@
 
 **`dynbatcher`** is a Python package designed to facilitate the creation and management of PyTorch DataLoaders with custom batch sizes and ratios. This package is especially useful for training neural networks with dynamic batch sizes. With `dynbatcher` you can divide a dataset into subsets with different batch sizes and turn it into a single Dataloader ready for training. 
 
-**[PyPI Page](https://pypi.org/project/dynbatcher/1.0.0/)**
+**[PyPI Page](https://pypi.org/project/dynbatcher/1.1.0/)**
 
 ## Features
 

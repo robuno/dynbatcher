@@ -2,13 +2,13 @@ from setuptools import setup, find_packages
 
 setup(
     name='dynbatcher',
-    version='1.0.0',
+    version='1.1.0',
     packages=find_packages(),
     install_requires=[
         'torch',
         'matplotlib'
     ],
-    author='Unat Teksen',
+    author='Unat T.',
     description='A package for creation of dataloader with dynamic batch sizes in PyTorch',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',

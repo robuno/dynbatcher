@@ -2,3 +2,4 @@ data/*
 plots/*
 build/*
 dist/*
+upload_package.py
