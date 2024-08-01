@@ -64,6 +64,13 @@ dynbatcher.print_batch_info(trainloader, index=127, display_samples=True)
     <img src="https://raw.githubusercontent.com/starkslab/starkslab.github.io/main/dbstraining/static/images/batch64.png" width="250" style="vertical-align: top;" alt="Batch Size 64 Samples" />
     <img src="https://raw.githubusercontent.com/starkslab/starkslab.github.io/main/dbstraining/static/images/batch32.png" width="250" style="vertical-align: top;" alt="Batch Size 32 Samples" />
 </div>
+<div></div>
+<br/>
+<div align="center">
+    <img src="https://raw.githubusercontent.com/starkslab/starkslab.github.io/main/dbstraining/static/images/dynbatcher.jpg" width="600" style="vertical-align: top;" alt="DynBatcher's Dataloader" />
+</div>
+<div></div>
+<br/>
 
 ## Contributing
 Contributions are welcome! Please open an issue or submit a pull request on GitHub.
