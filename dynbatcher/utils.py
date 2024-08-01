@@ -7,6 +7,20 @@ def check_and_create_dir(dirname):
         os.makedirs(dirname)
 
 def print_batch_info(train_dataloader, index, display_samples=False):
+    """
+    Print batch information and optionally display samples.
+
+    Args:
+        train_dataloader (DataLoader): The DataLoader with training batches.
+        index (int): The batch index.
+        display_samples (bool, optional): If True, display samples in a grid. Default is False.
+
+    This function:
+    1. Ensures the 'plots/batches' directory exists.
+    2. Retrieves the specified batch and prints the number of samples.
+    3. If display_samples is True, displays the images and labels in a grid and saves the plot.
+    """
+
     DIR_BATCHES = "plots/batches"
     check_and_create_dir(DIR_BATCHES)
 
@@ -32,7 +46,7 @@ def print_batch_info(train_dataloader, index, display_samples=False):
             axes[j].axis('off')
 
         plt.tight_layout()
-        # plt.show()
+        plt.show()
 
         timestamp = datetime.datetime.now().strftime('%d%m%Y_%H%M%S')
         fig.savefig(f'{DIR_BATCHES}/batch_{index}_({num_samples})_{timestamp}.png')
@@ -66,7 +80,7 @@ def plot_results(train_losses, test_losses, train_accuracies, test_accuracies, n
     ax2.set_ylabel('Accuracy')
     ax2.legend()
 
-    # plt.show()
+    plt.show()
     # Save the figure with timestamp
     timestamp = datetime.datetime.now().strftime('%d%m%Y_%H%M%S')
     fig.savefig(f'plots/results_{timestamp}.png')

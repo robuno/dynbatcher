@@ -1,19 +1,20 @@
-# DBS-training
+# dynbatcher - Dynamic Batch Size Dataloader Generator
 
-`dbstraining` is a Python package designed to facilitate the creation and management of PyTorch DataLoaders with custom batch sizes and ratios. This package is especially useful for training neural networks with dynamic batch sizes.
+`dynbatcher` is a Python package designed to facilitate the creation and management of PyTorch DataLoaders with custom batch sizes and ratios. This package is especially useful for training neural networks with dynamic batch sizes. With `dynbatcher` you can divide a dataset into subsets with different batch sizes and turn it into a single Dataloader ready for training. 
 
 ## Features
 
 - Split datasets based on custom ratios and batch sizes.
-- Create DataLoaders for each subset.
+- Create DataLoaders for each subset with different batch sizes.
 - Combine multiple DataLoaders into a single DataLoader.
+- Plot samples for a selected batch in created Dataloader.
 
 ## Installation
 
-Install `dbstraining` using pip:
+Install `dynbatcher` using pip:
 
 ```bash
-pip install dbstraining
+pip install dynbatcher
 ```
 
 ## Usage
@@ -24,24 +25,27 @@ pip install dbstraining
 from torch.utils.data import DataLoader
 import torchvision
 import torchvision.transforms as transforms
-import dbstraining
+import dynbatcher
 
-# define batch sizes and ratios
+# Define batch sizes and ratios
 ratios = [0.5, 0.3, 0.2]              # Corresponding ratios for each subset
 batch_sizes_train = [32, 64, 128]     # Corresponding batch sizes for each subset
 
-# add transforms and download datasets
+# Add transforms and download datasets
 transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5,), (0.5,))])
 trainset = torchvision.datasets.MNIST(root='./data', train=True, download=True, transform=transform)
 testset = torchvision.datasets.MNIST(root='./data', train=False, download=True, transform=transform)
 
-# set dataloaders and use DBS training
-trainloader = dbstraining.load_merged_trainloader(trainset, batch_sizes_train, ratios, print_info=True)
+# Set dataloaders and use DBS Merger & Generator
+trainloader = dynbatcher.load_merged_trainloader(trainset, batch_sizes_train, ratios, print_info=True)
 testloader = DataLoader(testset, batch_size=64, shuffle=False)
 
 # Example: Access and print information for the selected batch, and display samples
-dbstraining.print_batch_info(trainloader, index=127, display_samples=True)
+dynbatcher.print_batch_info(trainloader, index=127, display_samples=True)
 ```
+
+- `batch_sizes_train`: You can choose which batch sizes you want to split the dataset into.
+- `ratios`: You can choose the ratio in which the data will be allocated to the batch sizes you choose for the dataset. If you do not specify a ratio, it will allocate an equal number of samples to the given batch sizes.
 
 ### Investigating Batch Samples
 

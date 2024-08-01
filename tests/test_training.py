@@ -4,9 +4,9 @@ import torch.optim as optim
 from torch.utils.data import DataLoader
 import torchvision
 import torchvision.transforms as transforms
-from dbstraining.utils import plot_results
+from dynbatcher.utils import plot_results
 from tqdm import tqdm
-import dbstraining
+import dynbatcher
 
 class SimpleNN(nn.Module):
     def __init__(self):
@@ -35,7 +35,7 @@ def main ():
     testset = torchvision.datasets.MNIST(root='./data', train=False, download=True, transform=transform)
 
     # set dataloaders
-    trainloader = dbstraining.load_merged_trainloader(trainset, batch_sizes_train, ratios)
+    trainloader = dynbatcher.load_merged_trainloader(trainset, batch_sizes_train, ratios)
     testloader = DataLoader(testset, batch_size=batch_size_test, shuffle=False)
 
     # Print the number of batches in the train and test loaders
