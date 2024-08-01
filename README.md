@@ -44,8 +44,16 @@ testloader = DataLoader(testset, batch_size=64, shuffle=False)
 dynbatcher.print_batch_info(trainloader, index=127, display_samples=True)
 ```
 
+### Parameters
+
 - `batch_sizes_train`: You can choose which batch sizes you want to split the dataset into.
 - `ratios`: You can choose the ratio in which the data will be allocated to the batch sizes you choose for the dataset. If you do not specify a ratio, it will allocate an equal number of samples to the given batch sizes.
+
+### Functions
+
+- `load_merged_trainloader`: This function divides the given dataset with the batch size and ratios you choose and combines them to create a single dataloader.
+- `print_batch_info`: This function displays and allows you to examine all samples for any batch you select.
+
 
 ### Investigating Batch Samples
 
